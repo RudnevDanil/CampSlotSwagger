@@ -89,13 +89,7 @@ class App extends Component{
                         limit: "10",
                         offset: "0",
                     }},
-                {name: "changeIsPaid", data: {
-                        login: "123456",
-                        pass: "123",
-                        postId: "3",
-                        isPaid: "true",
-                        paymentText: "some new payment text",
-                    }},
+                {name: "getApiUrl", data: {}},
             ]
 
             let request = requests.filter(r => r.name === "changeIsPaid")[0]
