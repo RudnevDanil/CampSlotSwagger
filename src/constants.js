@@ -3,7 +3,7 @@ let corsHeaders = {
     'Access-Control-Max-Age': '3600',
     'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE,PATCH,OPTIONS',
     'Access-Control-Allow-Headers': 'Origin, X-Requested-With, Content-Type, Accept',
-    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Credentials': 'false',
     'Content-Type': 'application/x-www-form-urlencoded',
     //'Content-Type': 'application/json',
 }

@@ -1,6 +1,5 @@
 import React , {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-
 import {corsHeaders} from "./constants"
 const axios = require('axios');
 
@@ -60,7 +59,7 @@ class App extends Component{
                         paymentText: "some payment text",
                         lat: "50.064192",
                         lon: "44.920110",
-                        infrastructureArr: JSON.stringify([{water: true, shower: true, toilet: true}]),
+                        infrastructureArr: JSON.stringify(["water", "shower", "toilet"]),
                     }},
                 {name: "getComments", data: {
                         postId: "1",
@@ -75,7 +74,7 @@ class App extends Component{
                         lat: "50.064192",
                         lon: "44.920110",
                         dist: "10000",
-                        infrastructureArr: JSON.stringify([{water: true, shower: true}]),
+                        infrastructureArr: JSON.stringify(["water", "shower"]),
                     }},
                 {name: "getPost", data: {
                         postId: "1",
@@ -95,11 +94,11 @@ class App extends Component{
                 {name: "getApiUrl", data: {}},
             ]
 
-            let request = requests.filter(r => r.name === "changeIsPaid")[0]
+            let request = requests.filter(r => r.name === "commentCreate")[0]
             let response = await axios({
                 method: 'post',
                 url: 'http://h96046yr.beget.tech/campSlot/' + request.name + '.php/',
-                headers: {"Content-type": "application/json; charset=UTF-8"},
+                headers: {...corsHeaders, "Content-type": "application/json; charset=UTF-8"},
                 data: request.data
             })
 
