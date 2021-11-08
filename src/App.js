@@ -16,20 +16,20 @@ class App extends Component{
                 {name: "userCreate", data: {
                         avatar: "123123123123123123123123123123123123123123123123123123123",
                         email: "123",
-                        login: "123456",
+                        login: "1ww23w456",
                         pass: "123",
-                        transportRaiting: "50",
-                        transportFlag: "123",
+                        transportRating: "50",
+                        transportName: "123",
                     }},
                 {name: "auth", data: {
                         login: "12345",
                         pass: "123",
                     }},
                 {name: "markPost", data: {
-                        login: "12345",
+                        login: "123456",
                         pass: "123",
-                        postId: "5",
-                        doMark: "false",
+                        postId: "15",
+                        doMark: "true",
                     }},
                 {name: "removePost", data: {
                         login: "12345",
@@ -39,7 +39,7 @@ class App extends Component{
                 {name: "commentCreate", data: {
                         login: "12345",
                         pass: "123",
-                        postId: "1",
+                        postId: "16",
                         imgs: JSON.stringify(["123123", "321321"]),
                         posText: "some positive text",
                         negText: "some negative text",
@@ -62,39 +62,47 @@ class App extends Component{
                         infrastructureArr: JSON.stringify(["water", "shower", "toilet"]),
                     }},
                 {name: "getComments", data: {
-                        postId: "1",
-                        limit: "3",
+                        postId: "16",
+                        limit: "2",
                         offset: "0",
                     }},
                 {name: "getPosts", data: {
+                        // 47.234176, 39.701906 Ростов
+                        // 51.668138, 39.197598 Воронеж 500-600 км до Ростова
+                        // 56.852287, 35.888789 Тверь 1000-1200 км до Ростова
                         login: "12345",
                         pass: "123",
-                        minTransportRating: "123321",
-                        minStarRating: "3.4",
-                        lat: "50.064192",
-                        lon: "44.920110",
-                        dist: "10000",
+                        minTransportRating: "10",
+                        minStarRating: "0.0",
+                        lat: "47.234176",
+                        lon: "39.701906",
+                        dist: "1.0",
                         infrastructureArr: JSON.stringify(["water", "shower"]),
+                        limit: "3",
+                        offset: "0",
                     }},
                 {name: "getPost", data: {
-                        postId: "1",
+                        postId: "16",
                     }},
                 {name: "getPostImgs", data: {
-                        postId: "1",
-                        fromComments: false // true
+                        postId: "16",
+                    }},
+                {name: "getCommentImgs", data: {
+                        postId: "16",
+                        commentsIds: JSON.stringify(["5", "6"])
                     }},
                 {name: "getUserPage", data: {
-                        login: "12345",
+                        userId: "3",
                     }},
                 {name: "getMarkedPosts", data: {
-                        userId: "1",
-                        limit: "10",
+                        userId: "3",
+                        limit: "2",
                         offset: "0",
                     }},
                 {name: "getApiUrl", data: {}},
             ]
 
-            let request = requests.filter(r => r.name === "commentCreate")[0]
+            let request = requests.filter(r => r.name === "getPosts")[0]
             let response = await axios({
                 method: 'post',
                 url: 'http://h96046yr.beget.tech/campSlot/' + request.name + '.php/',
