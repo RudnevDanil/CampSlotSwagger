@@ -44,7 +44,7 @@ class App extends Component{
                         posText: "some positive text",
                         negText: "some negative text",
                         neuText: "some neutral text",
-                        stars: "3.4",
+                        stars: "5",
                         isPaid: "true",//
                         paymentText: "some money" //
                     }},
@@ -102,7 +102,7 @@ class App extends Component{
                 {name: "getApiUrl", data: {}},
             ]
 
-            let request = requests.filter(r => r.name === "getPosts")[0]
+            let request = requests.filter(r => r.name === "commentCreate")[0]
             let response = await axios({
                 method: 'post',
                 url: 'http://h96046yr.beget.tech/campSlot/' + request.name + '.php/',
