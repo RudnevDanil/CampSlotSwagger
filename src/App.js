@@ -102,7 +102,7 @@ class App extends Component{
                 {name: "getApiUrl", data: {}},
             ]
 
-            let request = requests.filter(r => r.name === "commentCreate")[0]
+            let request = requests.filter(r => r.name === "getApiUrl")[0]
             let response = await axios({
                 method: 'post',
                 url: 'http://h96046yr.beget.tech/campSlot/' + request.name + '.php/',
