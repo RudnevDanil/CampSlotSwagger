@@ -21,7 +21,7 @@ export function Form() {
         try {
             let response = await axios({
                 method: 'post',
-                url: 'http://h96046yr.beget.tech/campSlot/' + curr.name + '.php/',
+                url: 'http://h96046yr.beget.tech/campSpot/' + curr.name + '.php/',
                 headers: {...corsHeaders, "Content-type": "application/json; charset=UTF-8"},
                 data: curr.data
             })

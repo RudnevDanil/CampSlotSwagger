@@ -61,9 +61,9 @@ export let defaultStartSettings = [
         data: {
             login: "login123",
             pass: "pass123",
+            postId: "22",
             title: "title2",
             transportRating: "66",
-            rating: "3.4", // ~
             text: "texttexttexttexttext2", // ~
             imgs: JSON.stringify(["qweqwe11", "qweqweqwe22"]), // ~
             infrastructureArr: JSON.stringify(["water"/*, "shower"*/]),
@@ -83,6 +83,8 @@ export let defaultStartSettings = [
         name: "post/postGet",
         data: {
             postId: "7",
+            login: "login123", // ~
+            pass: "pass123", // ~
         }
     },
     {
@@ -116,7 +118,7 @@ export let defaultStartSettings = [
         }
     },
     {
-        name: "map/getMap",
+        name: "post/getMap",
         data: {
             lat: "43.32",
             lon: "43.65",
@@ -150,6 +152,7 @@ export let defaultStartSettings = [
             login: "login123",
             pass: "pass123",
             rating: "3.4",
+            postId: "27"
         }
     },
     {
@@ -158,7 +161,6 @@ export let defaultStartSettings = [
             login: "login123",
             pass: "pass123",
             commentId: "4",
-            rating: "5", // ~
             text: "textcomment", // ~
             imgs: JSON.stringify(["qweqwe11", "qweqweqwe22"]), // ~
         }
@@ -169,6 +171,7 @@ export let defaultStartSettings = [
             login: "login123",
             pass: "pass123",
             commentId: "4",
+            postId: "27",
         }
     },
     {
